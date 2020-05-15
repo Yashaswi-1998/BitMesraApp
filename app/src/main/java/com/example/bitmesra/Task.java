@@ -3,14 +3,13 @@ package com.example.bitmesra;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.Transaction;
 
 import java.io.Serializable;
 @Entity
 public class Task implements Serializable{
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    private int id;
 
     @ColumnInfo(name="latitude")
     private String latitude;
@@ -21,38 +20,38 @@ public class Task implements Serializable{
     @ColumnInfo(name="signal")
     private int signal;
 
- public Task()
- {
-
- }
-
-
-    public void setLatitude(String latitude)
-    {
-        this.latitude=latitude;
+    Task() {
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public void setSignal(int signal) {
-        this.signal = signal;
-    }
-
-    public String getLatitude() {
+    String getLatitude() {
         return latitude;
     }
 
-    public String getLongitude() {
+    void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    String getLongitude() {
         return longitude;
     }
 
-    public int getSignal() {
+    void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    int getSignal() {
         return signal;
     }
 
-    public int getId() {
+    void setSignal(int signal) {
+        this.signal = signal;
+    }
+
+    int getId() {
         return id;
+    }
+
+    void setId(int id) {
+        this.id = id;
     }
 }
